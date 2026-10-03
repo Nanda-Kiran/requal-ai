@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requal — Pitch deck</title>
+<meta name="description" content="Requal: automated evaluation infrastructure for critical AI systems.">
+<style>
+  :root { --bg:#f7f6f2; --card:#ffffff; --ink:#16181d; --muted:#5b606b; --line:#dcd9d0; --accent:#1f6f5c; --soft:#e8f2ee; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#111317; --card:#171a1f; --ink:#eceae4; --muted:#9aa0ab; --line:#2a2e36; --accent:#5cc3a6; --soft:#16302a; }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-snap-type:y mandatory; scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+    font-family: ui-sans-serif, -apple-system, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif; }
+  section { scroll-snap-align:start; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:56px 24px; border-bottom:1px solid var(--line); position:relative; }
+  .s { max-width:960px; width:100%; }
+  .k { font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:14px; }
+  h1, h2 { font-family: ui-serif, "Source Serif 4", Georgia, serif; font-weight:500; margin:0 0 18px; line-height:1.15; }
+  h1 { font-size:clamp(36px,6vw,60px); }
+  h2 { font-size:clamp(28px,4.2vw,42px); }
+  p, li { font-size:clamp(17px,1.8vw,20px); line-height:1.55; color:var(--muted); }
+  ul { padding-left:1.1em; margin:0; } li { margin:8px 0; }
+  strong { color:var(--ink); font-weight:600; }
+  .brand { display:flex; align-items:center; gap:10px; font-weight:650; font-size:20px; margin-bottom:40px; }
+  .mark { width:28px; height:28px; border:2px solid var(--accent); border-radius:6px; display:grid; place-items:center; color:var(--accent); font-size:16px; }
+  .grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); margin-top:10px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 18px 16px; }
+  .card h3 { margin:0 0 6px; font-size:17px; color:var(--ink); }
+  .card p { font-size:15.5px; margin:0; }
+  .n { display:inline-grid; place-items:center; width:26px; height:26px; border-radius:50%; background:var(--soft); color:var(--accent); font-weight:700; font-size:14px; margin-bottom:10px; }
+  table { width:100%; border-collapse:collapse; margin-top:8px; font-size:16px; }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--ink); font-weight:600; } td { color:var(--muted); }
+  .pill { display:inline-block; padding:4px 10px; border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--muted); letter-spacing:.04em; text-transform:uppercase; }
+  .num { position:absolute; right:22px; bottom:18px; font-size:13px; color:var(--muted); }
+  .quote { border-left:3px solid var(--accent); padding-left:16px; margin:22px 0 0; }
+  @media print {
+    @page { size: 13.333in 7.5in; margin:0; }
+    html { scroll-snap-type:none; }
+    section { min-height:7.5in; height:7.5in; page-break-after:always; border:0; }
+  }
+</style>
+</head>
+<body>
+
+<section><div class="s">
+  <div class="brand"><span class="mark" aria-hidden="true">✓</span>Requal</div>
+  <h1>Automated evaluation infrastructure for critical AI systems.</h1>
+  <p>Every change to your AI system tested in your own cloud. What the system actually did, checked against your policy. A signed release decision your deployment pipeline enforces.</p>
+  <p style="margin-top:28px"><span class="pill">Pre-launch · working product</span></p>
+</div><span class="num">1</span></section>
+
+<section><div class="s">
+  <div class="k">The problem</div>
+  <h2>AI systems now take real actions. Every change is a gamble.</h2>
+  <ul>
+    <li>AI systems move money, change accounts, approve requests and write to production systems.</li>
+    <li>Teams change the model, prompt or tools every few weeks, and any change can silently break behaviour that used to work.</li>
+    <li>Today: manual spot checks, home-grown test scripts, and dashboards that score the model's <strong>words</strong>, not what it <strong>did</strong>.</li>
+    <li>Nothing stops an untested change reaching production. Teams slow every release down, or ship and hope.</li>
+  </ul>
+</div><span class="num">2</span></section>
+
+<section><div class="s">
+  <div class="k">The solution</div>
+  <h2>Bring your system. Requal runs, verifies and enforces.</h2>
+  <p>Teams bring their own AI system, models and evaluation logic. Requal provides the infrastructure that turns a proposed change into a release decision they can trust and prove.</p>
+  <div class="grid">
+    <div class="card"><h3>Runs in your cloud</h3><p>A runner in the customer's environment. Raw data stays there by default.</p></div>
+    <div class="card"><h3>Checks outcomes</h3><p>What the system did to the tools and data it touched, not just what it said.</p></div>
+    <div class="card"><h3>Decides honestly</h3><p>Sound statistics; says "not enough evidence" instead of passing.</p></div>
+    <div class="card"><h3>Signs and enforces</h3><p>Signed, re-verifiable verdicts; the release decision is enforced at the deployment gate.</p></div>
+  </div>
+</div><span class="num">3</span></section>
+
+<section><div class="s">
+  <div class="k">How it works</div>
+  <h2>From a proposed change to an enforced release decision.</h2>
+  <div class="grid">
+    <div class="card"><span class="n">1</span><h3>Compare</h3><p>Old and new versions run side by side on the same cases, under the same declared conditions.</p></div>
+    <div class="card"><span class="n">2</span><h3>Exercise</h3><p>Sandboxed copies of tools, resettable state, injected failures, and a log of every action.</p></div>
+    <div class="card"><span class="n">3</span><h3>Qualify</h3><p>The customer's policy and statistical limits decide: qualified, not qualified, or needs more evidence.</p></div>
+    <div class="card"><span class="n">4</span><h3>Authorise</h3><p>Named approvers authorise the exact version; the deployment gate admits it and blocks anything else.</p></div>
+  </div>
+</div><span class="num">4</span></section>
+
+<section><div class="s">
+  <div class="k">Why now</div>
+  <h2>AI is moving from answering to acting.</h2>
+  <ul>
+    <li>Agents are being given tools and permissions inside real business systems.</li>
+    <li>New models ship constantly; teams switch models and prompts far more often than they ship traditional software.</li>
+    <li>A wrong action costs more than a wrong answer, and someone has to sign off on every release.</li>
+    <li>Engineering teams need release infrastructure for AI the way they already have CI/CD for code.</li>
+  </ul>
+</div><span class="num">5</span></section>
+
+<section><div class="s">
+  <div class="k">Business model</div>
+  <h2>Paid pilots, then annual subscriptions.</h2>
+  <div class="grid">
+    <div class="card"><h3>Design-partner pilot</h3><p>8 weeks, planned at $10–15K, ending in a real release decision.</p></div>
+    <div class="card"><h3>Annual subscription</h3><p>Hosted platform priced by AI systems under evaluation and release volume.</p></div>
+    <div class="card"><h3>Enterprise tier</h3><p>Single sign-on, audit exports, longer evidence retention, private control plane.</p></div>
+    <div class="card"><h3>Later, optional</h3><p>Requal-hosted models, billed by usage, for teams that prefer not to manage their own.</p></div>
+  </div>
+  <p style="margin-top:18px">Customers run evaluations on their own cloud with their own model keys, so model and compute costs stay with them and gross margins stay at software levels. We grow by adding AI systems and teams inside each customer.</p>
+</div><span class="num">6</span></section>
+
+<section><div class="s">
+  <div class="k">Go to market</div>
+  <h2>Start with 3–5 paid design partners.</h2>
+  <ul>
+    <li><strong>Now:</strong> founder-led outreach to AI engineering and product leaders at companies running AI agents and models in production.</li>
+    <li><strong>First reference implementation:</strong> customer-support agents that take account actions (refunds, resets, cancellations), where a wrong action is easy to see and costly.</li>
+    <li><strong>Next:</strong> case studies from pilots, technical content on testing AI systems by their outcomes, partnerships with agent platforms and AI consultancies.</li>
+  </ul>
+</div><span class="num">7</span></section>
+
+<section><div class="s">
+  <div class="k">Competition</div>
+  <h2>Others score outputs. Requal is the layer underneath.</h2>
+  <table>
+    <tr><th>Category</th><th>Examples</th><th>What they do</th></tr>
+    <tr><td>Evaluation and observability tools</td><td>Braintrust, LangSmith, Arize, Galileo, Patronus AI</td><td>Score and monitor model outputs</td></tr>
+    <tr><td>Open-source eval frameworks</td><td>promptfoo, DeepEval, Inspect, OpenAI Evals</td><td>Test harnesses teams assemble themselves</td></tr>
+    <tr><td>AI governance platforms</td><td>Credo AI, ValidMind, Holistic AI</td><td>Policies, inventories and documentation</td></tr>
+    <tr><td>Status quo</td><td>In-house scripts, manual QA</td><td>Slow, unrepeatable, unenforced</td></tr>
+  </table>
+  <p class="quote">Requal runs, verifies and enforces evaluations in the customer's cloud, checks actions and final state, and can run other tools' scorers inside it.</p>
+</div><span class="num">8</span></section>
+
+<section><div class="s">
+  <div class="k">Where we are</div>
+  <h2>Pre-launch, with a working product.</h2>
+  <div class="grid">
+    <div class="card"><h3>Evaluation engine</h3><p>Proven on a live run across 12 model configurations, with sealed, re-verifiable results.</p></div>
+    <div class="card"><h3>Platform</h3><p>Hosted control plane, a runner for the customer's cloud, and a web app on the real API.</p></div>
+    <div class="card"><h3>Agent test environment</h3><p>Sandboxed tools, resettable state, injected failures; faulty agents caught, corrected agents pass.</p></div>
+    <div class="card"><h3>Trust</h3><p>Signed verdicts, an independent verifier, a deployment gate; 3,000+ automated tests.</p></div>
+  </div>
+  <p style="margin-top:18px"><strong>Next:</strong> first end-to-end demonstration, hosted staging, and the first paid design-partner pilots.</p>
+</div><span class="num">9</span></section>
+
+<section><div class="s">
+  <div class="k">Team and ask</div>
+  <h2>Solo technical founder. Looking for the first partners.</h2>
+  <p><strong>Nanda Kiran</strong>, Founder and CEO. Built the product end to end: evaluation engine, platform, runner, web app and agent test environment.</p>
+  <p style="margin-top:22px"><strong>What we're looking for:</strong></p>
+  <ul>
+    <li>Introductions to companies running AI systems that take real actions, for 3–5 paid design-partner pilots.</li>
+    <li>Help with enterprise sales and pricing the move from pilot to subscription.</li>
+    <li>Preparation for a seed round.</li>
+  </ul>
+  <p style="margin-top:26px"><a href="../" style="color:var(--accent)">nanda-kiran.github.io/requal-ai</a></p>
+</div><span class="num">10</span></section>
+
+<script>
+  document.addEventListener('keydown', function (e) {
+    var keys = { ArrowDown: 1, PageDown: 1, ArrowRight: 1, ' ': 1, ArrowUp: -1, PageUp: -1, ArrowLeft: -1 };
+    if (!(e.key in keys)) return;
+    var s = Array.prototype.slice.call(document.querySelectorAll('section'));
+    var y = window.scrollY + 10, i = 0;
+    s.forEach(function (el, k) { if (el.offsetTop <= y) i = k; });
+    var t = s[Math.max(0, Math.min(s.length - 1, i + keys[e.key]))];
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+  });
+</script>
+</body>
+</html>
