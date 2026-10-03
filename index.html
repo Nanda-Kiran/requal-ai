@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requal — Coming soon</title>
+<meta name="description" content="Requal: automated evaluation infrastructure for critical AI systems. Coming soon.">
+<style>
+  :root {
+    --bg: #f7f6f2; --ink: #16181d; --muted: #5b606b; --line: #dcd9d0; --accent: #1f6f5c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111317; --ink: #eceae4; --muted: #9aa0ab; --line: #2a2e36; --accent: #5cc3a6; }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: ui-sans-serif, -apple-system, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    display: flex; align-items: center; justify-content: center; padding: 32px 20px;
+  }
+  main { max-width: 640px; width: 100%; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 650; letter-spacing: 0.02em; font-size: 20px; }
+  .mark { width: 26px; height: 26px; border: 2px solid var(--accent); border-radius: 6px; display: grid; place-items: center; color: var(--accent); font-size: 15px; }
+  .badge { display: inline-block; margin-top: 48px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+  h1 { font-family: ui-serif, "Source Serif 4", Georgia, serif; font-weight: 500; font-size: clamp(32px, 6vw, 48px); line-height: 1.12; margin: 16px 0 18px; }
+  p { font-size: 18px; line-height: 1.6; color: var(--muted); margin: 0 0 14px; }
+  .rule { height: 1px; background: var(--line); margin: 36px 0 20px; }
+  footer { font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand"><span class="mark" aria-hidden="true">✓</span>Requal</div>
+  <span class="badge">Coming soon</span>
+  <h1>Automated evaluation infrastructure for critical AI systems.</h1>
+  <p>Every change to your AI agent tested in your own cloud. What the agent actually did, checked against your policy. A signed release decision your deployment pipeline enforces.</p>
+  <div class="rule"></div>
+  <footer>© 2026 Requal</footer>
+</main>
+</body>
+</html>
